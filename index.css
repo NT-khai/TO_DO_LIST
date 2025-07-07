@@ -8,9 +8,24 @@ body {
   margin: 0px;
 }
 
-body .dark {
+body.dark {
   background-color: rgb(58, 58, 49);
-  color: aliceblue;
+  color: rgb(65, 79, 92);
+  .menu-chinh ul li a {
+    text-decoration: none;
+    color: rgb(140, 142, 232);
+  }
+  .hienthi {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(199, 165, 231);
+    box-shadow: 10px 10px 10px rgb(35, 33, 33);
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+  .hienthi>h1{
+    color: black;
+  }
 }
 
 .menu-chinh ul {
@@ -105,16 +120,16 @@ input[type="text"]:focus {
   margin-bottom: 20px;
 }
 
-.hienthi ol li button{
+.hienthi ol li button {
   background-color: rgb(232, 140, 140);
   border-radius: 10px;
   border-style: none;
   outline: none;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   transition: all 0.2s ease;
 }
 
-.hienthi ol li button:hover{
+.hienthi ol li button:hover {
   cursor: pointer;
   box-shadow: 10px 10px 10px rgb(84, 73, 73);
   background-color: rgb(140, 169, 232);

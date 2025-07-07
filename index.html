@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="index.css" />
     <title>To Do List</title>
   </head>
@@ -11,9 +17,17 @@
     <header>
       <nav class="menu-chinh">
         <ul>
-          <li class="item-menu"><a href="">Trang Chủ <i class="fa-solid fa-house"></i></a></li>
-          <li class="item-menu"><a href="">To Do List <i class="fa-solid fa-list"></i></a></li>
-          <li class="item-menu"><a href="">Nhiệt độ <i class="fa-solid fa-temperature-three-quarters"></i></a></li>
+          <li class="item-menu">
+            <a href="">Sáng/Tối <i class="fa-regular fa-lightbulb"></i></a>
+          </li>
+          <li class="item-menu">
+            <a href="">To Do List <i class="fa-solid fa-list"></i></a>
+          </li>
+          <li class="item-menu">
+            <a href=""
+              >Nhiệt độ <i class="fa-solid fa-temperature-three-quarters"></i
+            ></a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -30,13 +44,22 @@
         </div>
 
         <div class="hienthi">
-          <h1><i class="fa-solid fa-briefcase"></i> CÔNG VIỆC <i class="fa-solid fa-briefcase"></i></h1>
+          <h1>
+            <i class="fa-solid fa-briefcase"></i> CÔNG VIỆC
+            <i class="fa-solid fa-briefcase"></i>
+          </h1>
           <ol id="noidung"></ol>
         </div>
       </div>
     </main>
 
     <script>
+      let btn_sang = document.getElementsByClassName("item-menu")[0];
+      btn_sang.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.body.classList.toggle("dark");
+      });
+
       let btn_them = document.getElementsByTagName("button")[0];
       btn_them.addEventListener("click", () => {
         // lay phan tu noi dung
@@ -55,16 +78,16 @@
           btn_hoanthanh.textContent = "Hoàn Thành";
           btn_hoanthanh.style.height = "40px";
           btn_hoanthanh.style.width = "150px";
-          btn_hoanthanh.style.fontSize="20px";
+          btn_hoanthanh.style.fontSize = "20px";
           li.appendChild(btn_hoanthanh);
           //thêm nội dung vào danh sách
           noidung.appendChild(li);
           // xóa nội dung trong input sau khi thêm
           content.value = "";
 
-          btn_hoanthanh.addEventListener('click',()=>{
+          btn_hoanthanh.addEventListener("click", () => {
             li.remove();
-          })
+          });
         }
       });
     </script>
