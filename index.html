@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <header>
+      <nav class="menu-chinh">
+        <ul>
+          <li class="item-menu"><a href="">Trang Chủ</a></li>
+          <li class="item-menu"><a href="">To Do List</a></li>
+          <li class="item-menu"><a href="">Nhiệt độ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="content-main">
+        <div class="nhap-content">
+          <input
+            type="text"
+            name="congviec"
+            id="congviec"
+            placeholder="Công Việc A ..."
+          />
+          <button type="button">Thêm</button>
+        </div>
+
+        <div class="hienthi">
+          <h1>CÔNG VIỆC</h1>
+          <ol id="noidung"></ol>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let btn_them = document.getElementsByTagName("button")[0];
+      btn_them.addEventListener("click", () => {
+        // lay phan tu noi dung
+        let content = document.getElementById("congviec");
+        let noidung = document.getElementById("noidung");
+        if (content.value === "") {
+          alert("Chưa có công Việc thêm vào");
+        } else {
+          // tao phan tu con
+          let li = document.createElement("li");
+          // lấy nội dung từ input
+          li.textContent = content.value;
+
+          // thêm nút hoàn thành công việc và xóa công việc hoàn thành
+          let btn_hoanthanh = document.createElement("button");
+          btn_hoanthanh.textContent = "Hoàn Thành";
+          btn_hoanthanh.style.height = "40px";
+          btn_hoanthanh.style.width = "150px";
+          btn_hoanthanh.style.fontSize="20px";
+          li.appendChild(btn_hoanthanh);
+          //thêm nội dung vào danh sách
+          noidung.appendChild(li);
+          // xóa nội dung trong input sau khi thêm
+          content.value = "";
+
+          btn_hoanthanh.addEventListener('click',()=>{
+            li.remove();
+          })
+        }
+      });
+    </script>
+  </body>
+</html>
